@@ -2,7 +2,7 @@ import os
 import errno
 import click
 
-_FILES_DIR = os.path.dirname(os.path.abspath(__file__)) + '/_files/'
+_FILES_DIR = os.path.dirname(os.path.abspath(__file__)) + '/files/'
 def create_dirs():
     dirs = ['/data',
             '/data/processed',
