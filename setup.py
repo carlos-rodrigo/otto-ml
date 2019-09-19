@@ -1,3 +1,4 @@
+import os
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -13,7 +14,7 @@ def package_files(directory):
 files = package_files('otto/files')
 setuptools.setup(
     name="otto-ml",
-    version="0.1.1",
+    version="0.1.2",
     author="Carlos Rodrigo",
     author_email="hi@carlosrodrigo.me",
     description="Otto is a simple Boilerplate for Machine Learning projects integrated with MLflow tools",
