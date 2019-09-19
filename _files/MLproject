@@ -1,0 +1,9 @@
+#MLproject
+name: *project_name*
+
+conda: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+    command: "python main.py"
