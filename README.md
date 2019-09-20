@@ -1,4 +1,4 @@
-# OTTO ML 
+# OTTO
 Otto is a simple Boilerplate for Machine Learning projects integrated with MLflow that creates a basic directory structure to organize your code and data.
 
 ```
