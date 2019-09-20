@@ -23,7 +23,7 @@ and use otto
 
 `otto --name new-project`
 
-or simple use it with out params and let otto guides you
+or simple use it with out params and let otto guides you 😉
 
 `otto`
 
