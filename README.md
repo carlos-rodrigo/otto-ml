@@ -41,7 +41,7 @@ or simple use it with out params and let otto guides you 😉
 
 and that's it!  😝
 
-...someone says 'ok, but how is supoust to use this structure in practice?' go to the Wiki to find out. 
+...someone says "ok, but how is supposedly I will use this structure in practice?" go to the Wiki to find out. 
 
 
 
