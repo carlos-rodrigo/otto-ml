@@ -3,12 +3,16 @@ import errno
 import click
 
 _FILES_DIR = os.path.dirname(os.path.abspath(__file__)) + '/files/'
+_PROJECT_NAME_WILDCARD = "*project_name*"
 def create_dirs():
     dirs = ['/data',
             '/data/processed',
             '/data/raw',
             '/notebooks',
             '/src',
+            '/src/models',
+            '/src/data',
+            '/src/features',
             '/tests']
 
     for d in dirs:
@@ -20,21 +24,31 @@ def create_dirs():
             except OSError as exc: # Guard against race condition
                 print(exc)
 
-def create_file(file_name, project_name):
+def get_file_content_from_files(file_name):
     full_path_file = _FILES_DIR + file_name
     with open(full_path_file, 'r') as reader:
-        conda_content = reader.read()
-    conda_content = conda_content.replace("*project_name*", project_name)
+        file_content = reader.read()
+        return file_content
 
-    with open(file_name, 'w') as writer:
-        writer.write(conda_content)
+def write_file(content, file_path):
+    with open(file_path, 'w') as writer:
+        writer.write(content)
+
+def search_keyword_and_replace(content, keyword, content_to_be_inserted):
+    return content.replace(keyword, content_to_be_inserted)
 
 
+def create_file(file_name, project_name, extra_path=''):
+    file_content = get_file_content_from_files(file_name)
+    file_content = search_keyword_and_replace(file_content,_PROJECT_NAME_WILDCARD, project_name)
+
+    write_file(file_content, extra_path + file_name)
 
 def create_files(project_name):
-    files = ['conda.yaml',
+    files = ['Dockerfile',
             'MLproject',
             'README.md',
+            '.env',
             '.gitignore']
 
     for f in files:
@@ -48,3 +62,14 @@ def init(name):
     create_dirs()
     print("Creating files....")
     create_files(name)
+
+    current_dir = os.getcwd()
+    full_dir = current_dir + '/src/models/'
+    create_file('model.py', name, full_dir)
+    write_file('', full_dir + '__init__.py')
+    write_file('', current_dir + '/src/data/__init__.py')
+    write_file('', current_dir + '/src/data/data_preparation.py')
+    write_file('', current_dir + '/src/__init__.py')
+    create_file('train.py', name, current_dir + '/')
+
+    print("Done!")

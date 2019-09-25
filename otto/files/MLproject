@@ -1,7 +1,8 @@
 #MLproject
 name: *project_name*
 
-conda: conda.yaml
+docker-env:
+  image: mlflow-*project_name*
 
 entry_points:
   main:
