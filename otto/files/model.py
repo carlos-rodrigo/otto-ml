@@ -1,4 +1,6 @@
 import sys
+from settings import MLFLOW_TRACKING_URI
+
 
 # Data Manipulation
 import numpy as np
@@ -12,9 +14,9 @@ from sklearn.ensemble import GradientBoostingClassifier
 import mlflow
 import mlflow.sklearn
 
-# TRACKING_URI = '<mlflow server url here>'  #format: http://usr:pass@url
-# mlflow.set_tracking_uri(TRACKING_URI)
 
+
+mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 EXPERIMENT_ID = mlflow.set_experiment('*project_name*')
 
 def train_model():

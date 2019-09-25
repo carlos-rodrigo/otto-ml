@@ -70,6 +70,7 @@ def init(name):
     write_file('', current_dir + '/src/data/__init__.py')
     write_file('', current_dir + '/src/data/data_preparation.py')
     write_file('', current_dir + '/src/__init__.py')
-    create_file('train.py', name, current_dir + '/')
+    create_file('train.py', name, current_dir + '/src/')
+    create_file('settings.py', name, current_dir + '/')
 
     print("Done!")
