@@ -6,5 +6,4 @@ docker-env:
 
 entry_points:
   main:
-    parameters:
     command: "python main.py"
