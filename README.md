@@ -1,10 +1,11 @@
 # OTTO
 Otto is a simple Boilerplate for Machine Learning projects integrated with MLflow that creates a basic directory structure to organize your code and data.
+Otto is strongly based on [Cookiecutter](https://drivendata.github.io/cookiecutter-data-science/), if you need something more complete is a good desition to visit his repo. 
 
 ```
 ├── MLproject
 ├── README.md
-├── conda.yaml
+├── Dockerfile
 ├── .env
 ├── .gitignore
 ├── data
@@ -12,10 +13,15 @@ Otto is a simple Boilerplate for Machine Learning projects integrated with MLflo
 │   └── raw/
 ├── notebooks/
 ├── src/
+│   ├── data/
+│   │   └── __init__.py
+│   │   └── data_preparation.py
+│   ├── features/
+│   │   └── __init__.py
 │   ├── models/
+│   │   └── __init__.py
 │   │   └── model.py
-├── data/
-│   └── features/
+│   └── __init__.py
 └── tests/
 ```
 
@@ -34,5 +40,8 @@ or simple use it with out params and let otto guides you 😉
 `otto`
 
 and that's it!  😝
+
+...someone says "ok, but how is supposedly I will use this structure in practice?" go to the Wiki to find out. 
+
 
 
