@@ -5,6 +5,18 @@ RUN pip install mlflow \
     && pip install scipy \
     && pip install pandas \
     && pip install scikit-learn \
-    && pip install python-dotenv \
     && pip install boto3 \
     && pip install cloudpickle 
+
+#AWS
+ENV AWS_ACCESS_KEY = ""
+ENV AWS_SECRET_KEY = ""
+ENV S3_BUCKET = ""
+
+#DB
+ENV DB_CONNECTION = ""
+
+#MLFLOW
+ENV MLFLOW_SERVER_TRACKING_URI = ""
+
+

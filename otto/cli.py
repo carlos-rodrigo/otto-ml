@@ -48,7 +48,7 @@ def create_files(project_name):
     files = ['Dockerfile',
             'MLproject',
             'README.md',
-            '.env',
+            '.dockerignore',
             '.gitignore']
 
     for f in files:
@@ -65,12 +65,13 @@ def init(name):
 
     current_dir = os.getcwd()
     full_dir = current_dir + '/src/models/'
+
     create_file('model.py', name, full_dir)
+    create_file('train.py', name, current_dir + '/src/')
+    create_file('settings.py', name, current_dir + '/src/')
+
     write_file('', full_dir + '__init__.py')
     write_file('', current_dir + '/src/data/__init__.py')
     write_file('', current_dir + '/src/data/data_preparation.py')
     write_file('', current_dir + '/src/__init__.py')
-    create_file('train.py', name, current_dir + '/src/')
-    create_file('settings.py', name, current_dir + '/')
-
     print("Done!")

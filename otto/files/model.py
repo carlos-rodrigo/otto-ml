@@ -1,5 +1,5 @@
 import sys
-from settings import MLFLOW_TRACKING_URI
+from settings import MLFLOW_SERVER_TRACKING_URI
 
 
 # Data Manipulation
@@ -16,7 +16,7 @@ import mlflow.sklearn
 
 
 
-mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
+mlflow.set_tracking_uri(MLFLOW_SERVER_TRACKING_URI)
 EXPERIMENT_ID = mlflow.set_experiment('*project_name*')
 
 def train_model():
