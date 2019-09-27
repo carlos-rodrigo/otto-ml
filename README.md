@@ -1,6 +1,6 @@
 # OTTO
 Otto is a simple Boilerplate for Machine Learning projects integrated with MLflow that creates a basic directory structure to organize your code and data.
-Otto is strongly based on [Cookiecutter](https://drivendata.github.io/cookiecutter-data-science/), if you need something more complete is a good desition to visit his repo. 
+Otto is strongly based on [Cookiecutter](https://drivendata.github.io/cookiecutter-data-science/), if you need something more complete is a good desition to visit they repo. 
 
 ```
 ├── MLproject
