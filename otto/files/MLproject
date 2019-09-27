@@ -1,7 +1,7 @@
 name: *project_name*
 
 docker_env:
-  image: mlflow-*project_name*
+  image: *project_name*
 
 entry_points:
   main:
