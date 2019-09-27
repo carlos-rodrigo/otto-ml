@@ -14,14 +14,10 @@ from sklearn.ensemble import GradientBoostingClassifier
 import mlflow
 import mlflow.sklearn
 
-
-
-mlflow.set_tracking_uri(MLFLOW_SERVER_TRACKING_URI)
 EXPERIMENT_ID = mlflow.set_experiment('*project_name*')
 
 def train_model():
     with mlflow.start_run(experiment_id=EXPERIMENT_ID):
-
         # INSERT YOUR CODE HERE #
 
 
