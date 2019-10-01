@@ -1,4 +1,4 @@
-FROM continuumio/miniconda:4.5.4
+FROM continuumio/miniconda3
 
 RUN pip install mlflow \
     && pip install numpy \

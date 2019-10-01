@@ -1,5 +1,5 @@
 import sys
-from settings import MLFLOW_SERVER_TRACKING_URI
+from settings import MLFLOW_CLIENT, MLFLOW_EXPERIMENT_NAME
 
 
 # Data Manipulation
@@ -14,10 +14,12 @@ from sklearn.ensemble import GradientBoostingClassifier
 import mlflow
 import mlflow.sklearn
 
-EXPERIMENT_ID = mlflow.set_experiment('*project_name*')
+mlflow.set_experiment(MLFLOW_EXPERIMENT_NAME)
+EXPERIMENT_ID = MLFLOW_CLIENT.get_experiment_by_name(MLFLOW_EXPERIMENT_NAME).experiment_id
+RUN_ID = MLFLOW_CLIENT.create_run(experiment_id=EXPERIMENT_ID).info.run_uuid
 
 def train_model():
-    with mlflow.start_run(experiment_id=EXPERIMENT_ID):
+   with mlflow.start_run(run_id=RUN_ID):
         # INSERT YOUR CODE HERE #
 
 
