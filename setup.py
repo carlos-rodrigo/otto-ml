@@ -14,7 +14,7 @@ def package_files(directory):
 files = package_files('otto/files')
 setuptools.setup(
     name="otto-ml",
-    version="0.1.24",
+    version="0.1.25",
     author="Carlos Rodrigo",
     author_email="hi@carlosrodrigo.me",
     description="Otto is a simple Boilerplate for Machine Learning projects integrated with MLflow tools",
