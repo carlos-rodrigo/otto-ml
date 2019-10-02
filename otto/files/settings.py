@@ -10,5 +10,5 @@ MLFLOW_CLIENT = mlflow.tracking.MlflowClient(MLFLOW_SERVER_TRACKING_URI)
 MLFLOW_EXPERIMENT_NAME = '*project_name*'
 
 def setup():
-    print(MLFLOW_SERVER_TRACKING_URI)
+    print('MLFLOW Traking Server URI ->' + MLFLOW_SERVER_TRACKING_URI)
     mlflow.set_tracking_uri(MLFLOW_SERVER_TRACKING_URI)

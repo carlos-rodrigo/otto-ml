@@ -16,10 +16,9 @@ import mlflow.sklearn
 
 mlflow.set_experiment(MLFLOW_EXPERIMENT_NAME)
 EXPERIMENT_ID = MLFLOW_CLIENT.get_experiment_by_name(MLFLOW_EXPERIMENT_NAME).experiment_id
-RUN_ID = MLFLOW_CLIENT.create_run(experiment_id=EXPERIMENT_ID).info.run_uuid
 
 def train_model():
-   with mlflow.start_run(run_id=RUN_ID):
+   with mlflow.start_run(experiment_id=EXPERIMENT_ID):
         # INSERT YOUR CODE HERE #
 
 
