@@ -31,6 +31,8 @@ def init(name, tracking_uri):
     write_file('', full_dir + '__init__.py')
     write_file('', current_dir + '/src/data/__init__.py')
     write_file('', current_dir + '/src/data/data_preparation.py')
+    write_file('', current_dir + '/src/utils/__init__.py')
+    write_file('', current_dir + '/src/features/__init__.py')
     write_file('', current_dir + '/src/__init__.py')
     create_docker_file(tracking_uri)
     create_build_image_file(tracking_uri, mlflow_experiment_id, name)
