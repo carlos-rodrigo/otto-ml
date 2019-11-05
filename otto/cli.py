@@ -5,8 +5,8 @@ from otto.utils.files import create_file, write_file, create_dirs, create_files,
 from otto.utils.mlflow import create_experiment
 
 @click.command()
-@click.option('--name', prompt='Project name', default='new-project')
-@click.option('--tracking-uri', 'tracking_uri',  prompt='Mlflow Tracking Uri', default='')
+@click.option('--name', prompt='Project name', default='new-machine-learning-project')
+@click.option('--tracking-uri', 'tracking_uri',  prompt='Mlflow Tracking Uri')
 def init(name, tracking_uri):
     """Creating the dir structure for a Machine Learning project with MLflow"""
     mlflow_experiment_id = 0
